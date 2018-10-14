@@ -42,6 +42,7 @@
 
 #define HAL_UART_IRQHandler   __HAL_UART_IRQHandler
 
+ void HAL_UART_IRQHandler(UART_HandleTypeDef *huart);
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
