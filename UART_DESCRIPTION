@@ -1,0 +1,6 @@
+it.c ядро, обробка преривань
+ -> USART1_IRQHandler() функція виклику драйвера для обробки
+ -> HAL_UART_IRQHandler(&huart1); драйвер, обробка всіх преривань що стосуються UART
+ -> HAL_UART_IRQHandler This function handles UART interrupt request
+ -> UART_Receive_IT Receives an amount of data in non blocking mode 
+ -> HAL_UART_RxCpltCallback(huart); коллбек який оповіщає що дані отримані повністю
