@@ -44,6 +44,12 @@
 
 /* USER CODE BEGIN 0 */
 
+int __io_putchar(int ch) {
+	while (huart1.gState != HAL_UART_STATE_READY); // will overwrite the buffer otherwise, (needs a timeout and error handling)
+	HAL_UART_Transmit_IT(&huart1, (uint8_t *)&ch, 1);
+//	HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
+	return ch;
+	}
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;

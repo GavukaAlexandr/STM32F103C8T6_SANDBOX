@@ -48,7 +48,6 @@
 #include "stdbool.h"
 #include "overrided_usart_driver.h"
 
-
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -63,7 +62,6 @@ int RxSuccess = 0;
 
 HAL_StatusTypeDef __HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
 HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -121,21 +119,21 @@ int main(void)
   while (1)
   {
 	  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-//	  HAL_Delay(500);
-//	  uint8_t str = "hello";
-
+	  HAL_Delay(500);
 	  if (RxSuccess == 1) {
-		  HAL_UART_Transmit_IT(&huart1, RxBuffer, RxSize);
-//		  memset(RxBuffer, 0, sizeof(RxBuffer));
-		  HAL_Delay(100);
+		  printf("\r\ %s \r\n", RxBuffer);
 		  HAL_UART_Receive_IT(&huart1, RxBuffer, RxSize);
 		  RxSuccess = 0;
 	  }
-  /* USER CODE END WHILE */
-  /* USER CODE BEGIN 3 */
-  }
-  /* USER CODE END 3 */
+//  /* USER CODE END WHILE */
+//  /* USER CODE BEGIN 3 */
+//  }
+//  /* USER CODE END 3 */
 
+//	  float f = 123.3;
+//	  printf("\r\ntemp: %.3f \r\n", f);
+//	  printf("%.3f", f);
+  }
 }
 
 /**
